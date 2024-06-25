@@ -22,3 +22,20 @@ unsigned long long fibonacci_dp(int n) {
     
     return fib[n];
 }
+
+void ukur_waktu_eksekusi(int n) {
+    auto mulai = std::chrono::high_resolution_clock::now();
+    fibonacci_rekursif(n);
+    auto selesai = std::chrono::high_resolution_clock::now();
+    auto durasi_rekursif = std::chrono::duration_cast<std::chrono::microseconds>(selesai - mulai).count();
+    
+    mulai = std::chrono::high_resolution_clock::now();
+    fibonacci_dp(n);
+    selesai = std::chrono::high_resolution_clock::now();
+    auto durasi_dp = std::chrono::duration_cast<std::chrono::microseconds>(selesai - mulai).count();
+    
+    std::cout << "n = " << n << std::endl;
+    std::cout << "Durasi pendekatan rekursif: " << durasi_rekursif << " mikrodetik" << std::endl;
+    std::cout << "Durasi pendekatan Dynamic Programming: " << durasi_dp << " mikrodetik" << std::endl;
+}
+
