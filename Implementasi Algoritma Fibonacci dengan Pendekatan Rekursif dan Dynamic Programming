@@ -1,0 +1,10 @@
+#include <iostream>
+#include <chrono>
+#include <vector>
+
+unsigned long long fibonacci_rekursif(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci_rekursif(n - 1) + fibonacci_rekursif(n - 2);
+}
+
