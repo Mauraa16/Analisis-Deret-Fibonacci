@@ -39,3 +39,12 @@ void ukur_waktu_eksekusi(int n) {
     std::cout << "Durasi pendekatan Dynamic Programming: " << durasi_dp << " mikrodetik" << std::endl;
 }
 
+int main() {
+    std::vector<int> nilai_uji = {10, 25, 30, 40, 50};
+    
+    for (int n : nilai_uji) {
+        ukur_waktu_eksekusi(n);
+    }
+    
+    return 0;
+}
