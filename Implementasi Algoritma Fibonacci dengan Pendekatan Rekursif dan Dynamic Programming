@@ -8,3 +8,17 @@ unsigned long long fibonacci_rekursif(int n) {
     return fibonacci_rekursif(n - 1) + fibonacci_rekursif(n - 2);
 }
 
+unsigned long long fibonacci_dp(int n) {
+    if (n <= 1)
+        return n;
+    
+    std::vector<unsigned long long> fib(n + 1);
+    fib[0] = 0;
+    fib[1] = 1;
+    
+    for (int i = 2; i <= n; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    
+    return fib[n];
+}
